@@ -15,21 +15,21 @@ let dt = new Date();
 console.log(`開始工作 at ${dt.toISOString()}`);
 
 let doHW = doWork("寫功課", 3000, true);
-let eat = doWork("吃早餐", 5000, true);
-let brush = doWork("刷牙", 3000, true);
 
 // console.log(doHW); // 這是一個Promise物件
+// 解決callback hell 方式一
+
 doHW
   .then(
     // .then()規範 第一個是成功，第二個是失敗
     (resolve) => {
       console.log("第1個函式被呼叫", resolve);
-      return eat;
+      return doWork("吃早餐", 5000, true);
     }
   )
   .then((resolve) => {
     console.log("第2個函式被呼叫", resolve);
-    return brush;
+    return doWork("刷牙", 3000, true);
   })
   .then((resolve) => {
     console.log("第3個函式被呼叫", resolve);
