@@ -14,12 +14,10 @@ let doWork = function (job, timer, isOk) {
 let dt = new Date();
 console.log(`開始工作 at ${dt.toISOString()}`);
 
-let doHW = doWork("寫功課", 3000, true);
-
 // console.log(doHW); // 這是一個Promise物件
 // 解決callback hell 方式一
 
-doHW
+doWork("寫功課", 3000, true)
   .then(
     // .then()規範 第一個是成功，第二個是失敗
     (resolve) => {
@@ -37,23 +35,3 @@ doHW
   .catch((reject) => {
     console.log("函式被呼叫失敗", reject);
   });
-
-// let eat = doWork("吃早餐", 5000, true);
-// eat.then(
-//   function (resolve) {
-//     console.log("第2個函式被呼叫", resolve);
-//   },
-//   function (reject) {
-//     console.log("第2個函式被呼叫失敗", reject);
-//   }
-// );
-
-// let brush = doWork("刷牙", 3000, true);
-// brush.then(
-//   function (resolve) {
-//     console.log("第3個函式被呼叫", resolve);
-//   },
-//   function (reject) {
-//     console.log("第3個函式被呼叫失敗", reject);
-//   }
-// );
