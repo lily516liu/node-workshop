@@ -15,7 +15,7 @@ let dt = new Date();
 console.log(`開始工作 at ${dt.toISOString()}`);
 
 let doHW = doWork("寫功課", 3000, true);
-// console.log(doHW); // 這是一個Promise
+// console.log(doHW); // 這是一個Promise物件
 doHW.then(
   function (resolve) {
     console.log("第1個函式被呼叫", resolve);
