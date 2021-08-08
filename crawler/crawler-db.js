@@ -2,13 +2,14 @@ const axios = require("axios"); //引用axios
 const moment = require("moment"); //引用moment套件
 const fs = require("fs");
 const mysql = require("mysql"); //連線到mysql
+require("dotenv").config();
 
 const connection = mysql.createConnection({
-  host: "",
-  user: "",
-  port: 3306,
-  password: "",
-  database: "stock",
+  host: process.env.DB_host,
+  user: process.env.DB_user,
+  port: process.env.DB_port,
+  password: process.env.DB_password,
+  database: process.env.DB_database,
 });
 
 connection.connect((err) => {
