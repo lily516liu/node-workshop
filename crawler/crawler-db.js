@@ -4,10 +4,10 @@ const fs = require("fs");
 const mysql = require("mysql"); //連線到mysql
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "admin",
+  host: "",
+  user: "",
   port: 3306,
-  password: "11111",
+  password: "",
   database: "stock",
 });
 
