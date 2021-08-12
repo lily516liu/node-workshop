@@ -5,7 +5,7 @@ const fs = require("fs");
 // 先讀 stock.txt > 再用axios > 再console.log資料
 // 把函式都先拉出來寫比較美
 // 函式一
-function resultCode() {
+function readStock() {
   return new Promise((resolve, reject) => {
     fs.readFile("stock.txt", "utf8", function (err, stockCode) {
       //把非同步函式搬進來
@@ -32,7 +32,7 @@ function resultData(stockCode) {
 //再一次用async await呼叫
 async function getData() {
   try {
-    let stockCode = await resultCode();
+    let stockCode = await readStock();
     let result = await resultData(stockCode);
     console.log(result.data);
   } catch (err) {
