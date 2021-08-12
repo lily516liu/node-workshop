@@ -27,7 +27,6 @@ function readStock(){
           if (err) {
             reject(err);
           } else {
-            // https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
             // trim 移除前後的空白字元，包括換行
             resolve(stockCode.trim());
           }
