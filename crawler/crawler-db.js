@@ -95,7 +95,7 @@ async function getData() {
 }
 getData();
 
-
+11
 
 
 // 讀 stock.txt 把股票代碼讀進來 OK
