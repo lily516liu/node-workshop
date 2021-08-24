@@ -57,7 +57,7 @@ app.use((req,res,next)=>{
 })
 
 
-app.listen(3000, async function () {
+app.listen(3001, async function () {
   // 因為用createPool 所以不用預先建立連線
   // await connection.connectAsync(); 
   console.log("我的 web server 啟動了～");
